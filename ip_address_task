@@ -1,0 +1,21 @@
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+
+class Main{
+    public static void main(String[] args) throws UnknownHostException {
+        System.out.println(func_IP_to_num("2149583360"));
+        System.out.println(func_num_to_IP("255"));
+    }
+    
+    public static String func_num_to_IP(String x) throws UnknownHostException {
+        InetAddress z = InetAddress.getByName(x);
+        return z.toString();
+    }//converts numbered ip-address into normal ip-address
+
+    public static String func_IP_to_num(String x) throws UnknownHostException{
+        Inet4Address z = (Inet4Address) Inet4Address.getByName(x);
+        return z.toString();
+    }//converts number into ip-address
+}
